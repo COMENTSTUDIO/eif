@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>앱 다운로드 중...</title>
+    <script>
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                // 안드로이드 기기 - Google Play 스토어로 이동
+                window.location.href = "https://play.google.com/store/apps/details?id=com.cafe24.ec.pluseifofficial";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // iOS 기기 - Apple App Store로 이동
+                window.location.href = "https://apps.apple.com/app/id6742397979";
+            } else {
+                // 그 외 기기 - 웹사이트로 이동 (필요하면 변경)
+                window.location.href = "https://yourwebsite.com";
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToStore()">
+    <p>잠시만 기다려 주세요. 앱스토어로 이동 중...</p>
+</body>
+</html>
